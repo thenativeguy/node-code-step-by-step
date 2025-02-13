@@ -1,16 +1,49 @@
 const fs = require('fs')
 const path = require('path');
 
-const dir_path = path.join(__dirname, 'files')
+const dir_path = path.join(__dirname, 'crud')
+const file_path = `${dir_path}/data.txt`
 
+/**
+ * Add data to the file
+ */
+
+// fs.writeFileSync(file_path, "This is simple text data" )
+
+/**
+ * Read Data from the file
+ */
+
+// fs.readFile(file_path, 'utf-8', (err, item) => {
+//     console.log(item)
+// } )
+
+/**
+ * Update file
+ */
+// fs.appendFile(file_path, "This is the new updated data", err => {
+//     if(!err) console.log("File updated...")
+// })
+
+/**
+ * Rename the file
+ */
+// fs.rename(file_path, `${dir_path}/new.txt`, err => {
+//     if(!err) console.log("File renamed successfully ...")
+// })
+
+/**
+ * Delete the file
+ */
+fs.unlinkSync(`${dir_path}/new.txt`)
 // for (let index = 0; index < 5; index++) {
 //     fs.writeFileSync(`${dir_path}/Hello${index}.text`, `This is a simple file ${index}`)
 // }
-fs.readdir(dir_path, (err, files) => {
-    files.forEach((item) => {
-        console.log(item)
-    })
-})
+// fs.readdir(dir_path, (err, files) => {
+//     files.forEach((item) => {
+//         console.log(item)
+//     })
+// })
 
 // const http = require('http');
 // const fileOps = require('./getting-input-from-cmdline')
