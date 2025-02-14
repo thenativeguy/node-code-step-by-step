@@ -1,9 +1,33 @@
-const fs = require('fs')
-const path = require('path');
+// const fs = require('fs')
+// const path = require('path');
 
-const dir_path = path.join(__dirname, 'crud')
-const file_path = `${dir_path}/data.txt`
+// const dir_path = path.join(__dirname, 'crud')
+// const file_path = `${dir_path}/data.txt`
 
+/**
+ * Understanding Asynchronous programming
+ */
+
+// console.log("Start execution...")
+
+// setTimeout(() => {
+//     console.log("Waiting...")
+// }, 2000)
+
+// console.log("End execution...")
+/**
+ * Handling asynchronous jobs
+ */
+let a = 10;
+let b = 0;
+
+let waitingData = new Promise((resolve, reject) => {
+    resolve(30)
+})
+waitingData.then((data) => {
+    b = data;
+    console.log(a+b)
+})
 /**
  * Add data to the file
  */
@@ -35,7 +59,7 @@ const file_path = `${dir_path}/data.txt`
 /**
  * Delete the file
  */
-fs.unlinkSync(`${dir_path}/new.txt`)
+// fs.unlinkSync(`${dir_path}/new.txt`)
 // for (let index = 0; index < 5; index++) {
 //     fs.writeFileSync(`${dir_path}/Hello${index}.text`, `This is a simple file ${index}`)
 // }
